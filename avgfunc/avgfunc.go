@@ -2,11 +2,17 @@ package main
 
 func avg(nums []float64) (avg float64) {
 	sum := 0.0
-	for _, n := range nums {
-		sum += n
-	}
+	switch len(nums) {
+	case 0:
+		avg = 0
+	default:
+		for _, n := range nums {
+			sum += n
+		}
 
-	return sum/float64(len(nums))
+		avg = sum/float64(len(nums))
+	}
+	return
 }
 
 func main() {
