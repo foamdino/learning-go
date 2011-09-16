@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func min(vals []int) (min int) {
-	min = 0
+	min = vals[0]
 	for _, val := range(vals) {
 		if val < min {
 			min = val
@@ -13,7 +13,7 @@ func min(vals []int) (min int) {
 }
 
 func max(vals []int) (max int) {
-	max = 0
+	max = vals[0]
 	for _, val := range(vals) {
 		if val > max {
 			max = val
