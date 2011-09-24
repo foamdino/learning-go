@@ -1,7 +1,7 @@
 include $(GOROOT)/src/Make.inc
 
-TARG=mystack
+TARG=rpn
 GOFILES=\
-	mystack.go\
+	rpn.go\
 
 include $(GOROOT)/src/Make.cmd
