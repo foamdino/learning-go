@@ -1,19 +1,10 @@
 package main
 
 import (
-	"strconv"
 	"fmt"
 	"math"
 	"rand"
 )
-
-func ord(s string) (val int) {
-	val, err := strconv.Atoi(s)
-	if err != nil {
-		val = 0
-	}
-	return
-}
 
 func randomPlusMinus() (val int) {
 	switch rand.Int31n(3) {
@@ -29,9 +20,9 @@ func randomPlusMinus() (val int) {
 
 
 func mutate(src string) (mutated string) {
-	charpos := rand.Int31n(int32(len(src)))
+	charpos := rand.Intn(len(src))
 	temp := []byte(src)
-	temp[charpos] = uint8(int(src[charpos]) + randomPlusMinus())
+	temp[charpos] = uint8(int(src[charpos]) + (rand.Intn(3) -1))
 	mutated = string(temp)
 	return
 }
